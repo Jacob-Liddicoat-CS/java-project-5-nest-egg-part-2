@@ -5,9 +5,13 @@ public class nestEgg2
 {
  public static void main(String args[])
  {
+  double salary;
+  int save;
+  int nretirement;
+  double growthRate; 
   salary = Double.parseDouble(args[1]);//Inputs your salary
-  save = Int.parseInt(args[2]);//Inputs percentage of your salary put into your retirement fund
-  nretirement = Int.parseInt(args[3]);//Inputs number of remaining years to retirement
+  save = Integer.parseInt(args[2]);//Inputs percentage of your salary put into your retirement fund
+  nretirement = Integer.parseInt(args[3]);//Inputs number of remaining years to retirement
   growthRate = Double.parseDouble(args[4]);//Inputs growth rate
   double F1 = salary * save * 0.01;//Calculates your retirement fund for the fi$
   double F2 = F1 * (1+0.01 * growthRate) + salary * save * 0.01;//Calculates yo$
