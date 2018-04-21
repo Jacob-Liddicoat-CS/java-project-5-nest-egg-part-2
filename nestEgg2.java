@@ -16,22 +16,23 @@ public class nestEgg2
 
   Scanner sf = new Scanner(new File("./growthRate.txt"));
   int maxIndx = -1;
-  String growthRate[] = new String[100];
+  String GrowthRates[] = new String[100];
   while(sf.hasNext())
   {
 	maxIndx++;
-	growthRate[maxIndx] = sf.nextLine();
+	GrowthRates[maxIndx] = sf.nextLine();
   }
   sf.close();
 
   double G = 0;
+  double F;
   for (int year = 0; year < nretirement; year++)
   {
-   F = G  * (1 + 0.01 * growthRate[year]) + salary * save * 0.01; //Calculates the value of this year
+   F = G  * (1 + 0.01 * GrowthRates[year]) + salary * save * 0.01; //Calculates the value of this year
    G = F;
   }
 
-  System.out.println(year + F + growthRate[year]);
+  System.out.println(year + F + GrowthRates[year]);
  }
 }
 
