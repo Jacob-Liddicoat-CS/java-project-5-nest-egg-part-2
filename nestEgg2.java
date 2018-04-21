@@ -5,13 +5,8 @@ public class nestEgg2
 {
  public static void main(String args[])
  {
-  int salary;
-  Scanner input = new Scanner(System.in);//Generates Scanner that scans the num$
-  System.out.println("Hello. What is your salary? ");
-
- salary = input.nextInt();//Inputs your salary
-  double save = 0.05;
-  double growthRate = 0.15;
+  salary = Double.parseDouble(args[1]);//Inputs your salary
+  
   double F1 = salary * save * 0.01;//Calculates your retirement fund for the fi$
   double F2 = F1 * (1+0.01 * growthRate) + salary * save * 0.01;//Calculates yo$
   double F3 = F2 * (1+0.01 * growthRate) + salary * save * 0.01;//Calculates yo$
