@@ -34,5 +34,11 @@ public class nestEgg2
    G = F;
    System.out.println("Year: " + year + ", F=" + F + ", Rate=" +  GrowthRates[year]);
   }
+  for (year = 0; year < nretirement; year++)
+  {
+   F = G * (1 + 0.01 * GrowthRates[year]) - expenses;//Calculates the retirement fund with expenses
+   G = F;
+   System.out.println("Year: " + year + ", F=" + F + ", Rate=" + GrowthRates[year]);
+  }
  }
 }
