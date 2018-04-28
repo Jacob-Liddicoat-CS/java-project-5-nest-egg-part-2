@@ -23,7 +23,10 @@ public class nestEgg2
   {
 	growthRate = Double.parseDouble(textReader.readLine());//Changes txt file to a double
   }
-   
+  double G = 0;
+  double F = 0;
+  int year;
+  
       System.out.println(growthRate);
  }
 }
