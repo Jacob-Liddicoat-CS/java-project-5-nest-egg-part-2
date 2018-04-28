@@ -11,10 +11,12 @@ public class nestEgg2
   double salary;
   int save;
   int nretirement;
+  int expenses;
   double growthRate;
   salary = Double.parseDouble(args[0]);//Inputs your salary
   save = Integer.parseInt(args[1]);//Inputs percentage of your salary put into your retirement fund
   nretirement = Integer.parseInt(args[2]);//Inputs number of remaining years to retirement
+  expenses = Integer.parseInt(args[3]);//Inputs your expenses
 
   FileReader fr = new FileReader("growthRate.txt");//Reads txt file
   BufferedReader textReader = new BufferedReader(fr);
