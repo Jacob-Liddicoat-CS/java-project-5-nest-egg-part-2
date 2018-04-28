@@ -8,7 +8,7 @@ import java.io.BufferedReader;
 public class readTextFile {
   public static void main(String args[]) throws IOException {
     double data;
-    FileReader fr = new FileReader("data.txt");
+    FileReader fr = new FileReader("growthRate.txt");
     BufferedReader textReader = new BufferedReader(fr);
 			
     for (int i = 1; i <= 5; i++){
