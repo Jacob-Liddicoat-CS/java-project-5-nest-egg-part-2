@@ -26,7 +26,11 @@ public class nestEgg2
   double G = 0;
   double F = 0;
   int year;
-  
-      System.out.println(growthRate);
+  for (year = 0; year < nretirement; year++)
+  {
+   F = G * (1 + 0.01 * GrowthRates[year]) + salary * save * 0.01; //Calculates the value of this year
+   G = F;
+  }
+  System.out.println(year + F + GrowthRates[year]);
  }
 }
