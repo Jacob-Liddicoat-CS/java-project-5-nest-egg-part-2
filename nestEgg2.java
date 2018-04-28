@@ -19,9 +19,9 @@ public class nestEgg2
   FileReader fr = new FileReader("growthRate.txt");//Reads txt file
   BufferedReader textReader = new BufferedReader(fr);
   double GrowthRates[] = new double[60];
-  for (int i = 1; i <= 60; i++)
+  for (int i = 0; i <= 59; i++)
   {
-	growthRate = Double.parseDouble(textReader.readLine());//Changes txt file to a double
+	GrowthRates[i] = Double.parseDouble(textReader.readLine());//Changes txt file to a double
   }
   double G = 0;
   double F = 0;
@@ -30,7 +30,7 @@ public class nestEgg2
   {
    F = G * (1 + 0.01 * GrowthRates[year]) + salary * save * 0.01; //Calculates the value of this year
    G = F;
+   System.out.println("Year: " + year + ", F=" + F + ", Rate=" +  GrowthRates[year]);
   }
-  System.out.println(year + F + GrowthRates[year]);
  }
 }
