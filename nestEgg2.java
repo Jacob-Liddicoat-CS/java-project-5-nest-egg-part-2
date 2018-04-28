@@ -7,7 +7,10 @@ import java.io.BufferedReader;
 
 public class nestEgg2 {
   public static void main(String args[]) throws IOException {
-    double data;
+    double salary;
+    int save;
+    int nretirement;
+    double growthRate;
     FileReader fr = new FileReader("growthRate.txt");
     BufferedReader textReader = new BufferedReader(fr);
 			
