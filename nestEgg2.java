@@ -1,6 +1,9 @@
 //Calculates your retirement fund each year
 import java.io.*;
 import java.util.*;
+import java.io.IOException;
+import java.io.FileReader;
+import java.io.BufferedReader;
 public class nestEgg2
 {
  public static void main(String args[]) throws IOException
@@ -14,19 +17,18 @@ public class nestEgg2
   nretirement = Integer.parseInt(args[2]);//Inputs number of remaining years to retirement
   growthRate = Double.parseDouble(args[3]);//Inputs growth rate
 
-  Scanner sf = new Scanner(new File("./growthRate.txt"));
-  int maxIndx = -1;
-  String GrowthRates[] = new String[100];
-  while(sf.hasNext())
+  FileReader fr = new FileReader("growthRate.txt");//Reads txt file
+  BufferedReader textReader = new BufferedReader(fr);
+  double GrowthRates[] = new double[100];
+  for (int i = 1; i <= 100; i++)
   {
-	maxIndx++;
-	GrowthRates[maxIndx] = sf.nextLine();
+	GrowthRates[i] = Double.parseDouble(textReader.readLine());//Changes txt file to a double
   }
-  sf.close();
 
   double G = 0;
-  double F;
-  for (int year = 0; year < nretirement; year++)
+  double F = 0;
+  int year;
+  for (year = 0; year < nretirement; year++)
   {
    F = G  * (1 + 0.01 * GrowthRates[year]) + salary * save * 0.01; //Calculates the value of this year
    G = F;
