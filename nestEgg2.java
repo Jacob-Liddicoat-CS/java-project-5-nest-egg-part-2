@@ -11,13 +11,11 @@ public class nestEgg2
   double salary;
   int save;
   int nretirement;
-  int expenses;
+  int expenses = 0;
   double growthRate;
   salary = Double.parseDouble(args[0]);//Inputs your salary
   save = Integer.parseInt(args[1]);//Inputs percentage of your salary put into your retirement fund
   nretirement = Integer.parseInt(args[2]);//Inputs number of remaining years to retirement
-  expenses = Integer.parseInt(args[3]);//Inputs your expenses
-
   FileReader fr = new FileReader("growthRate.txt");//Reads txt file
   BufferedReader textReader = new BufferedReader(fr);
   double GrowthRates[] = new double[60];
@@ -34,11 +32,18 @@ public class nestEgg2
    G = F;
    System.out.println("Year: " + year + ", F=" + F + ", Rate=" +  GrowthRates[year]);
   }
-  for (year = 0; year < nretirement; year++)
+  double R = G;
+  while(F > 1000)//Calculates maximum amount of expenses for a given length of retirement
   {
-   F = G * (1 + 0.01 * GrowthRates[year]) - expenses;//Calculates the retirement fund with expenses
-   G = F;
-   System.out.println("Year: " + year + ", F=" + F + ", Rate=" + GrowthRates[year]);
+   G = R;
+   System.out.println("Starting Retirement" + G +", Expenses=" + expenses);
+   for (year = 0; year < nretirement; year++)
+   {
+    F = G * (1 + 0.01 * GrowthRates[year]) - expenses;//Calculates the retirement fund with expenses
+    G = F;
+    System.out.println("Year: " + year + ", F=" + F + ", Rate=" + GrowthRates[year]);
+   }
+   expenses = expenses + 1000;
   }
  }
 }
